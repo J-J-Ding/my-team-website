@@ -1,27 +1,3 @@
-# OurTeam 静态展示站点
-
-这是一个用于展示团队成员与服务的静态网页，已经配置 GitHub Actions 将站点自动部署到 GitHub Pages（发布到 `gh-pages` 分支）。
-
-使用说明：
-
-1. 将仓库推送到 GitHub（替换远程地址为你的仓库）：
-
-```bash
-git init
-git add .
-git commit -m "Initial commit - team site"
-git branch -M main
-git remote add origin https://github.com/<你的用户名>/<仓库名>.git
-git push -u origin main
-```
-
-2. 推送到 `main` 分支后，GitHub Actions 会自动运行并将静态站点内容发布到 `gh-pages` 分支。
-
-3. 部署后，访问 https://<你的用户名>.github.io/<仓库名>/ 即可查看网站。
-
-注意：
-- 工作流使用仓库自动提供的 `GITHUB_TOKEN` 完成部署，不需要额外设置 secrets。
-- 如果你使用自定义域名，请在仓库根目录添加 `CNAME` 文件并将域名写入其中。
 # 团队网页展示项目
 
 一个现代化的团队网页展示项目，可以通过 GitHub Pages 直接部署和访问。

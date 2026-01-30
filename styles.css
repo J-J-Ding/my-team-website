@@ -22,11 +22,6 @@ body {
     overflow-x: hidden;
 }
 
-/* 为固定导航留出空间 */
-body {
-    padding-top: 72px;
-}
-
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -217,26 +212,6 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-}
-
-.team-controls {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    margin-bottom: 1.5rem;
-}
-
-#search {
-    flex: 1;
-    padding: 0.75rem 1rem;
-    border-radius: 10px;
-    border: 1px solid #e5e7eb;
-}
-
-#filterRole {
-    padding: 0.75rem 1rem;
-    border-radius: 10px;
-    border: 1px solid #e5e7eb;
 }
 
 .team-card {
@@ -482,50 +457,6 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-/* 模态框 */
-.modal {
-    position: fixed;
-    inset: 0;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0,0,0,0.5);
-    z-index: 2000;
-}
-.modal[aria-hidden="false"] {
-    display: flex;
-}
-.modal-dialog {
-    background: var(--white);
-    border-radius: 12px;
-    max-width: 720px;
-    width: 100%;
-    padding: 1.5rem;
-    position: relative;
-}
-.modal-close {
-    position: absolute;
-    right: 12px;
-    top: 8px;
-    border: none;
-    background: transparent;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-.modal-avatar {
-    width: 96px;
-    height: 96px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    margin-bottom: 0.75rem;
-}
-.modal-body { text-align: left; }
-
-/* 小屏幕调整 */
-@media (max-width: 640px) {
-  .team-controls { flex-direction: column; align-items: stretch; }
 }
 
 /* 响应式设计 */
