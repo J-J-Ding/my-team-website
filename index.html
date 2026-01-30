@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我们的团队 - 创新无限</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">OurTeam</div>
+            <ul class="nav-menu">
+                <li><a href="#home">首页</a></li>
+                <li><a href="#about">关于我们</a></li>
+                <li><a href="#team">团队成员</a></li>
+                <li><a href="#services">服务</a></li>
+                <li><a href="#contact">联系我们</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>创新引领未来</h1>
+            <p>我们是一支充满激情的团队，致力于创造卓越的产品和服务</p>
+            <a href="#about" class="btn btn-primary">了解更多</a>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">关于我们</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>我们的故事</h3>
+                    <p>我们的团队成立于2020年，由一群热爱技术创新的专业人士组成。我们相信技术的力量可以改变世界，致力于为客户提供最优质的解决方案。</p>
+                    <p>多年来，我们已经服务了多家企业，涵盖金融、教育、医疗等多个领域。我们的目标是成为行业领先的技术服务提供商。</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="100">0</div>
+                        <div class="stat-label">服务客户</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="50">0</div>
+                        <div class="stat-label">项目完成</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="15">0</div>
+                        <div class="stat-label">团队成员</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="5">0</div>
+                        <div class="stat-label">年经验</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">核心团队成员</h2>
+            <div class="team-controls">
+                <input id="search" type="search" placeholder="搜索成员或角色...">
+                <select id="filterRole">
+                    <option value="">全部角色</option>
+                </select>
+            </div>
+            <div id="teamGrid" class="team-grid" aria-live="polite"></div>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title">我们的服务</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+                    <h3>网站开发</h3>
+                    <p>专业的网站设计与开发，打造独特的品牌形象和用户体验</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>移动应用</h3>
+                    <p>跨平台移动应用开发，覆盖iOS和Android主流平台</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">☁️</div>
+                    <h3>云服务</h3>
+                    <p>云计算解决方案，助力企业数字化转型和业务升级</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">联系我们</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>联系方式</h3>
+                    <div class="contact-item"><span class="contact-icon">📍</span><span>北京市朝阳区科技园区</span></div>
+                    <div class="contact-item"><span class="contact-icon">📧</span><span>contact@ourteam.com</span></div>
+                    <div class="contact-item"><span class="contact-icon">📱</span><span>+86 138 8888 8888</span></div>
+                    <div class="contact-item"><span class="contact-icon">🌐</span><span>www.ourteam.com</span></div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group"><input type="text" placeholder="您的姓名" required></div>
+                        <div class="form-group"><input type="email" placeholder="您的邮箱" required></div>
+                        <div class="form-group"><input type="text" placeholder="主题"></div>
+                        <div class="form-group"><textarea placeholder="您的留言" rows="5" required></textarea></div>
+                        <button type="submit" class="btn btn-primary btn-full">发送留言</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section"><h4>关于我们</h4><p>我们是一支充满激情的团队，致力于创造卓越的产品和服务。</p></div>
+                <div class="footer-section"><h4>快速链接</h4><ul><li><a href="#home">首页</a></li><li><a href="#about">关于我们</a></li><li><a href="#team">团队成员</a></li></ul></div>
+                <div class="footer-section"><h4>关注我们</h4><div class="social-icons"><a href="#" class="social-icon">GitHub</a><a href="#" class="social-icon">Twitter</a></div></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 OurTeam. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <!-- 成员详情模态框 -->
+    <div id="memberModal" class="modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <button class="modal-close" aria-label="关闭">×</button>
+            <div class="modal-body">
+                <div class="modal-avatar"></div>
+                <h3 class="modal-name"></h3>
+                <p class="modal-role"></p>
+                <p class="modal-bio"></p>
+                <div class="modal-contact"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
