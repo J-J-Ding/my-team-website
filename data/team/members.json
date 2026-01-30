@@ -1,0 +1,128 @@
+[
+  {
+    "id": 1,
+    "username": "teacher1",
+    "password": "123456",
+    "role": "teacher",
+    "name": "张教授",
+    "title": "教授/实验室主任",
+    "description": "主要研究方向为人工智能和机器学习，发表SCI论文50余篇",
+    "avatar": "张",
+    "education": "清华大学博士",
+    "email": "zhang@lab.edu.cn",
+    "social": {
+      "linkedin": "#",
+      "github": "#"
+    },
+    "researchFields": ["人工智能", "机器学习"],
+    "projects": [],
+    "papers": [],
+    "competitions": [],
+    "publications": []
+  },
+  {
+    "id": 2,
+    "username": "teacher2",
+    "password": "123456",
+    "role": "teacher",
+    "name": "李教授",
+    "title": "教授/副主任",
+    "description": "专注于计算机视觉和深度学习领域",
+    "avatar": "李",
+    "education": "北京大学博士",
+    "email": "li@lab.edu.cn",
+    "social": {
+      "linkedin": "#",
+      "github": "#"
+    },
+    "researchFields": ["计算机视觉", "深度学习"],
+    "projects": [],
+    "papers": [],
+    "competitions": [],
+    "publications": []
+  },
+  {
+    "id": 3,
+    "username": "wang",
+    "password": "123456",
+    "role": "student",
+    "name": "王强",
+    "title": "博士研究生",
+    "description": "研究方向：自然语言处理，发表论文3篇",
+    "avatar": "王",
+    "education": "2020级博士",
+    "email": "wang@lab.edu.cn",
+    "social": {
+      "linkedin": "#",
+      "github": "#"
+    },
+    "researchFields": ["自然语言处理"],
+    "projects": [],
+    "papers": [],
+    "competitions": [],
+    "publications": []
+  },
+  {
+    "id": 4,
+    "username": "liu",
+    "password": "123456",
+    "role": "student",
+    "name": "刘洋",
+    "title": "博士研究生",
+    "description": "研究方向：计算机视觉，发表论文2篇",
+    "avatar": "刘",
+    "education": "2021级博士",
+    "email": "liu@lab.edu.cn",
+    "social": {
+      "linkedin": "#",
+      "github": "#"
+    },
+    "researchFields": ["计算机视觉"],
+    "projects": [],
+    "papers": [],
+    "competitions": [],
+    "publications": []
+  },
+  {
+    "id": 5,
+    "username": "chen",
+    "password": "123456",
+    "role": "student",
+    "name": "陈静",
+    "title": "硕士研究生",
+    "description": "研究方向：智能决策系统，发表论文1篇",
+    "avatar": "陈",
+    "education": "2022级硕士",
+    "email": "chen@lab.edu.cn",
+    "social": {
+      "linkedin": "#",
+      "github": "#"
+    },
+    "researchFields": ["智能决策系统"],
+    "projects": [],
+    "papers": [],
+    "competitions": [],
+    "publications": []
+  },
+  {
+    "id": 6,
+    "username": "zhao",
+    "password": "123456",
+    "role": "student",
+    "name": "赵敏",
+    "title": "硕士研究生",
+    "description": "研究方向：机器学习应用",
+    "avatar": "赵",
+    "education": "2023级硕士",
+    "email": "zhao@lab.edu.cn",
+    "social": {
+      "linkedin": "#",
+      "github": "#"
+    },
+    "researchFields": ["机器学习"],
+    "projects": [],
+    "papers": [],
+    "competitions": [],
+    "publications": []
+  }
+]

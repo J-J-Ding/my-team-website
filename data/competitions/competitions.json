@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "name": "全国大学生数学建模竞赛",
+    "description": "团队获得国家级一等奖",
+    "level": "国家级",
+    "award": "一等奖",
+    "date": "2023-10-15",
+    "organizer": "教育部高等教育司",
+    "participants": [5, 6],
+    "teamLeader": "陈静",
+    "keywords": ["数学建模", "数据分析", "算法"],
+    "details": "团队在比赛中表现优异，成功解决复杂实际问题"
+  },
+  {
+    "id": 2,
+    "name": "ACM国际大学生程序设计竞赛",
+    "description": "获得亚洲区域赛银奖",
+    "level": "国际级",
+    "award": "银奖",
+    "date": "2023-11-20",
+    "organizer": "ACM",
+    "participants": [3, 4, 5],
+    "teamLeader": "王强",
+    "keywords": ["编程", "算法", "数据结构"],
+    "details": "在激烈的竞争中脱颖而出"
+  },
+  {
+    "id": 3,
+    "name": "中国"互联网+"大学生创新创业大赛",
+    "description": "获得省级金奖",
+    "level": "省级",
+    "award": "金奖",
+    "date": "2023-09-10",
+    "organizer": "教育部",
+    "participants": [4, 6],
+    "teamLeader": "刘洋",
+    "keywords": ["创新创业", "项目开发", "商业计划"],
+    "details": "参赛项目为智能推荐系统"
+  }
+]

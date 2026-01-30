@@ -1,0 +1,196 @@
+/* ==================== 主题样式 ==================== */
+.theme-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.theme-modal-content {
+    background: var(--white);
+    border-radius: 16px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.theme-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.theme-modal-header h3 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+.theme-modal-body {
+    padding: 1.5rem;
+}
+
+.theme-section {
+    margin-bottom: 2rem;
+}
+
+.theme-section h4 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.theme-grid,
+.background-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.theme-card,
+.background-card {
+    cursor: pointer;
+    border: 3px solid transparent;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.theme-card:hover,
+.background-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.theme-card.active,
+.background-card.active {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+.theme-preview,
+.background-preview {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+}
+
+.theme-info,
+.background-info {
+    padding: 1rem;
+}
+
+.theme-info h5,
+.background-info h5 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    color: var(--text-color);
+}
+
+.theme-info p,
+.background-info p {
+    font-size: 0.85rem;
+    color: var(--light-text-color);
+    line-height: 1.4;
+}
+
+.custom-background-section {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background: var(--bg-light);
+    border-radius: 12px;
+}
+
+.custom-background-section h5 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.custom-background-section > p {
+    font-size: 0.9rem;
+    color: var(--light-text-color);
+    margin-bottom: 1rem;
+}
+
+.custom-background-form {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.theme-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    padding-top: 1.5rem;
+    border-top: 2px solid #e5e7eb;
+}
+
+/* ==================== 超链接样式 ==================== */
+.content-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.content-link:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+.content-link::after {
+    content: '↗';
+    font-size: 0.8rem;
+}
+
+.link-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    background: var(--bg-light);
+    border-radius: 12px;
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    margin-top: 0.5rem;
+}
+
+.link-indicator a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.link-indicator a:hover {
+    text-decoration: underline;
+}

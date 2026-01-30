@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人中心 - OurTeam</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="dashboard-navbar">
+        <div class="container">
+            <div class="nav-brand">OurTeam</div>
+            <div class="user-menu">
+                <div class="user-info">
+                    <div class="user-avatar" id="userAvatar">?</div>
+                    <div class="user-details">
+                        <div class="user-name" id="userName">用户名</div>
+                        <div class="user-role">成员</div>
+                    </div>
+                </div>
+                <button id="logoutBtn" class="btn btn-outline">退出登录</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <div class="container">
+            <div class="dashboard-grid">
+                <!-- 侧边栏 -->
+                <aside class="dashboard-sidebar">
+                    <div class="sidebar-menu">
+                        <a href="#profile" class="sidebar-item active" data-tab="profile">
+                            <span class="icon">👤</span>
+                            <span>个人资料</span>
+                        </a>
+                        <a href="#skills" class="sidebar-item" data-tab="skills">
+                            <span class="icon">💼</span>
+                            <span>技能管理</span>
+                        </a>
+                        <a href="#social" class="sidebar-item" data-tab="social">
+                            <span class="icon">🔗</span>
+                            <span>社交链接</span>
+                        </a>
+                        <a href="#preview" class="sidebar-item" data-tab="preview">
+                            <span class="icon">👁️</span>
+                            <span>预览效果</span>
+                        </a>
+                    </div>
+                </aside>
+
+                <!-- 主内容区 -->
+                <main class="dashboard-main">
+                    <!-- 个人资料 -->
+                    <div id="profile" class="tab-content active">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>个人资料</h2>
+                                <p class="card-subtitle">更新您的基本信息，这些信息将显示在团队页面</p>
+                            </div>
+
+                            <form id="profileForm" class="dashboard-form">
+                                <div class="form-group">
+                                    <label for="name">姓名 <span class="required">*</span></label>
+                                    <input type="text" id="name" name="name" placeholder="请输入您的姓名" required>
+                                    <small class="form-hint">将显示在团队卡片上</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="role">职位 <span class="required">*</span></label>
+                                    <input type="text" id="role" name="role" placeholder="例如：前端开发工程师" required>
+                                    <small class="form-hint">您在团队中的职位</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="description">个人描述 <span class="required">*</span></label>
+                                    <textarea id="description" name="description" rows="4" placeholder="介绍一下您自己..." required></textarea>
+                                    <small class="form-hint">简短描述，将显示在卡片上</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="experience">工作经验</label>
+                                    <input type="text" id="experience" name="experience" placeholder="例如：5年">
+                                    <small class="form-hint">您的工作年限</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="avatar">头像（姓氏）</label>
+                                    <input type="text" id="avatar" name="avatar" placeholder="例如：张" maxlength="1">
+                                    <small class="form-hint">请输入您的姓氏，将用作头像</small>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">保存更改</button>
+                                    <button type="reset" class="btn btn-outline">重置</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- 技能管理 -->
+                    <div id="skills" class="tab-content">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>技能管理</h2>
+                                <p class="card-subtitle">添加您的专业技能，每行一个技能</p>
+                            </div>
+
+                            <form id="skillsForm" class="dashboard-form">
+                                <div class="form-group">
+                                    <label for="skills">技能列表</label>
+                                    <textarea id="skills" name="skills" rows="6" placeholder="每行输入一个技能，例如：&#10;React&#10;Vue&#10;TypeScript&#10;Node.js"></textarea>
+                                    <small class="form-hint">每行一个技能，最多8个</small>
+                                </div>
+
+                                <div class="skills-preview" id="skillsPreview">
+                                    <div class="preview-title">当前技能：</div>
+                                    <div class="skills-tags" id="currentSkills">
+                                        <!-- 技能标签将在这里动态显示 -->
+                                    </div>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">保存技能</button>
+                                    <button type="button" class="btn btn-outline" onclick="document.getElementById('skills').value=''">清空</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- 社交链接 -->
+                    <div id="social" class="tab-content">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>社交链接</h2>
+                                <p class="card-subtitle">添加您的社交媒体链接</p>
+                            </div>
+
+                            <form id="socialForm" class="dashboard-form">
+                                <div class="form-group">
+                                    <label for="linkedin">LinkedIn</label>
+                                    <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/username">
+                                    <small class="form-hint">您的 LinkedIn 个人主页链接</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="github">GitHub</label>
+                                    <input type="url" id="github" name="github" placeholder="https://github.com/username">
+                                    <small class="form-hint">您的 GitHub 主页链接</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="twitter">Twitter</label>
+                                    <input type="url" id="twitter" name="twitter" placeholder="https://twitter.com/username">
+                                    <small class="form-hint">您的 Twitter 账号链接（可选）</small>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">保存链接</button>
+                                    <button type="reset" class="btn btn-outline">重置</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- 预览效果 -->
+                    <div id="preview" class="tab-content">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>预览效果</h2>
+                                <p class="card-subtitle">查看您在团队页面上的显示效果</p>
+                            </div>
+
+                            <div class="preview-container">
+                                <div class="team-card" id="previewCard">
+                                    <div class="team-image">
+                                        <div class="placeholder-avatar" id="previewAvatar">?</div>
+                                    </div>
+                                    <div class="team-info">
+                                        <h3 id="previewName">姓名</h3>
+                                        <p class="team-role" id="previewRole">职位</p>
+                                        <p class="team-desc" id="previewDesc">个人描述</p>
+                                        <div class="member-skills" id="previewSkills">
+                                            <!-- 技能标签 -->
+                                        </div>
+                                        <div class="social-links" id="previewSocial">
+                                            <!-- 社交链接 -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="preview-actions">
+                                <a href="../index.html#team" target="_blank" class="btn btn-primary">在团队页面查看</a>
+                                <button onclick="updatePreview()" class="btn btn-outline">刷新预览</button>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

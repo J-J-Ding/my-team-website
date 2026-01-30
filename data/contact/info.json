@@ -1,0 +1,41 @@
+{
+  "company": {
+    "name": "OurTeam"
+  },
+  "address": {
+    "label": "公司地址",
+    "value": "北京市朝阳区科技园区",
+    "icon": "📍",
+    "type": "address"
+  },
+  "email": {
+    "label": "电子邮箱",
+    "value": "contact@ourteam.com",
+    "icon": "📧",
+    "type": "email"
+  },
+  "phone": {
+    "label": "联系电话",
+    "value": "+86 138 8888 8888",
+    "icon": "📱",
+    "type": "phone"
+  },
+  "website": {
+    "label": "官方网站",
+    "value": "www.ourteam.com",
+    "icon": "🌐",
+    "type": "website"
+  },
+  "workingHours": {
+    "label": "工作时间",
+    "value": "周一至周五 9:00-18:00",
+    "icon": "🕐",
+    "type": "text"
+  },
+  "social": {
+    "github": "https://github.com/ourteam",
+    "twitter": "https://twitter.com/ourteam",
+    "linkedin": "https://linkedin.com/company/ourteam",
+    "wechat": "ourteam_official"
+  }
+}

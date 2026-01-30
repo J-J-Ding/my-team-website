@@ -1,0 +1,110 @@
+{
+  "themes": [
+    {
+      "id": "default",
+      "name": "默认蓝色",
+      "description": "经典的蓝色主题，专业稳重",
+      "primaryColor": "#2563eb",
+      "secondaryColor": "#1e40af",
+      "accentColor": "#3b82f6",
+      "bgColor": "#ffffff",
+      "textColor": "#1f2937",
+      "lightTextColor": "#6b7280",
+      "bgLight": "#f9fafb"
+    },
+    {
+      "id": "green",
+      "name": "清新绿色",
+      "description": "清新的绿色主题，自然舒适",
+      "primaryColor": "#059669",
+      "secondaryColor": "#047857",
+      "accentColor": "#10b981",
+      "bgColor": "#ffffff",
+      "textColor": "#1f2937",
+      "lightTextColor": "#6b7280",
+      "bgLight": "#f0fdf4"
+    },
+    {
+      "id": "purple",
+      "name": "优雅紫色",
+      "description": "优雅的紫色主题，时尚大气",
+      "primaryColor": "#7c3aed",
+      "secondaryColor": "#6d28d9",
+      "accentColor": "#8b5cf6",
+      "bgColor": "#ffffff",
+      "textColor": "#1f2937",
+      "lightTextColor": "#6b7280",
+      "bgLight": "#faf5ff"
+    },
+    {
+      "id": "orange",
+      "name": "活力橙色",
+      "description": "活力的橙色主题，热情开朗",
+      "primaryColor": "#ea580c",
+      "secondaryColor": "#c2410c",
+      "accentColor": "#f97316",
+      "bgColor": "#ffffff",
+      "textColor": "#1f2937",
+      "lightTextColor": "#6b7280",
+      "bgLight": "#fff7ed"
+    },
+    {
+      "id": "dark",
+      "name": "深色模式",
+      "description": "深色主题，护眼舒适",
+      "primaryColor": "#3b82f6",
+      "secondaryColor": "#2563eb",
+      "accentColor": "#60a5fa",
+      "bgColor": "#1f2937",
+      "textColor": "#f9fafb",
+      "lightTextColor": "#9ca3af",
+      "bgLight": "#111827"
+    },
+    {
+      "id": "rose",
+      "name": "玫瑰红色",
+      "description": "温馨的红色主题，温暖浪漫",
+      "primaryColor": "#e11d48",
+      "secondaryColor": "#be123c",
+      "accentColor": "#f43f5e",
+      "bgColor": "#ffffff",
+      "textColor": "#1f2937",
+      "lightTextColor": "#6b7280",
+      "bgLight": "#fff1f2"
+    }
+  ],
+  "defaultTheme": "default",
+  "backgrounds": [
+    {
+      "id": "default-bg",
+      "name": "默认背景",
+      "description": "简洁的渐变背景",
+      "type": "gradient",
+      "value": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+    },
+    {
+      "id": "nature",
+      "name": "自然风光",
+      "description": "清新的自然风景",
+      "type": "image",
+      "value": "/assets/backgrounds/nature.jpg",
+      "preview": "🌿"
+    },
+    {
+      "id": "tech",
+      "name": "科技风格",
+      "description": "现代科技感背景",
+      "type": "image",
+      "value": "/assets/backgrounds/tech.jpg",
+      "preview": "💻"
+    },
+    {
+      "id": "minimal",
+      "name": "简约风格",
+      "description": "纯色简约背景",
+      "type": "solid",
+      "value": "#f9fafb"
+    }
+  ],
+  "defaultBackground": "default-bg"
+}

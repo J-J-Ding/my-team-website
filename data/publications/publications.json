@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "智能系统导论",
+    "authors": ["张教授", "李教授"],
+    "publisher": "科学出版社",
+    "publishDate": "2023-06",
+    "isbn": "978-7-03-072345-6",
+    "pages": 456,
+    "language": "中文",
+    "category": "教材",
+    "description": "本书系统介绍了智能系统的基础理论和核心技术，适合本科生和研究生使用",
+    "coverImage": "",
+    "buyLink": "https://www.sciencep.com",
+    "memberId": 1
+  },
+  {
+    "id": 2,
+    "title": "深度学习实战：从理论到应用",
+    "authors": ["李教授"],
+    "publisher": "清华大学出版社",
+    "publishDate": "2023-09",
+    "isbn": "978-7-302-62345-6",
+    "pages": 380,
+    "language": "中文",
+    "category": "专著",
+    "description": "深入浅出地讲解深度学习原理和实践，包含大量代码示例",
+    "coverImage": "",
+    "buyLink": "https://www.tup.tsinghua.edu.cn",
+    "memberId": 2
+  }
+]

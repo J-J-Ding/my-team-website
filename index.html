@@ -1,23 +1,84 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+<!--
+    智能系统实验室主页
+    Intelligent Systems Laboratory Homepage
+
+    文件说明：
+    - 这是网站的主页文件，包含所有可见的页面模块
+    - 使用语义化 HTML5 标签
+    - 所有数据通过 JavaScript 动态加载
+    - 支持主题切换和响应式布局
+
+    修改指南：
+    - 修改布局结构：编辑本文件
+    - 修改内容：编辑 data/ 文件夹下的 JSON 文件
+    - 修改样式：编辑 styles.css 和 theme-styles.css
+    - 修改逻辑：编辑 script.js
+
+    图片替换：
+    - Logo: assets/images/logo.png
+    - 背景: assets/backgrounds/ 目录下
+    - 成员头像: assets/images/member-avatar.png (占位)
+    - 新闻图片: assets/images/news-default.png
+    - 博客图片: assets/images/blog-default.png
+    - 项目图片: assets/images/project-default.png
+    - 活动图片: assets/images/activity-default.png
+-->
 <head>
     <meta charset="UTF-8">
+    <!-- 视口设置：确保移动端正确显示 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我们的团队 - 创新无限</title>
+    <title>智能系统实验室</title>
+
+    <!-- 样式文件引入 -->
+    <!-- 主样式文件：包含所有基础样式 -->
     <link rel="stylesheet" href="styles.css">
+    <!-- 主题样式文件：包含主题切换相关样式 -->
+    <link rel="stylesheet" href="theme-styles.css">
 </head>
 <body>
-    <!-- 导航栏 -->
+    <!-- ==================== 导航栏 ==================== -->
     <nav class="navbar">
         <div class="container">
-            <div class="nav-brand">OurTeam</div>
+            <!-- 网站 Logo/名称 -->
+            <div class="nav-brand">
+                <img src="assets/images/lab-logo.png" alt="实验室Logo" class="brand-logo">
+                智能系统实验室
+            </div>
+
+            <!-- 搜索框区域 -->
+            <div class="nav-center">
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="搜索项目、论文、成员..." class="search-input">
+                    <button id="searchButton" class="search-button">🔍</button>
+                </div>
+            </div>
+
+            <!-- 导航菜单 -->
             <ul class="nav-menu">
-                <li><a href="#home">首页</a></li>
-                <li><a href="#about">关于我们</a></li>
-                <li><a href="#team">团队成员</a></li>
-                <li><a href="#services">服务</a></li>
-                <li><a href="#contact">联系我们</a></li>
+                <li><a href="#home">主页</a></li>
+                <li><a href="#achievements">成果汇总</a></li>
+                <li><a href="#news">新闻</a></li>
+                <li><a href="#blogs">博客</a></li>
+                <li><a href="#projects">课题项目</a></li>
+                <li><a href="#papers">论文</a></li>
+                <li><a href="#competitions">竞赛</a></li>
+                <li><a href="#publications">刊物</a></li>
+                <li><a href="#team">团队</a></li>
+                <li><a href="#activities">活动</a></li>
+                <li><a href="#contact">联系</a></li>
             </ul>
+
+            <!-- 登录和主题按钮 -->
+            <div class="auth-buttons">
+                <!-- 登录按钮：未登录时显示 -->
+                <a href="pages/login.html" class="btn btn-outline-sm" id="loginBtn">登录</a>
+                <!-- 主题切换按钮 -->
+                <button id="themeToggleBtn" class="btn btn-outline-sm" title="切换主题">🎨</button>
+            </div>
+
+            <!-- 移动端汉堡菜单 -->
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -26,175 +87,263 @@
         </div>
     </nav>
 
-    <!-- 首页 Hero Section -->
+    <!-- ==================== 搜索弹窗 ==================== -->
+    <div id="searchModal" class="search-modal">
+        <div class="search-modal-content">
+            <div class="search-modal-header">
+                <h3>搜索结果</h3>
+                <button id="closeSearch" class="close-button">&times;</button>
+            </div>
+            <div id="searchResults" class="search-results">
+                <!-- 搜索结果将在这里动态加载 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== 主题选择弹窗 ==================== -->
+    <div id="themeModal" class="theme-modal">
+        <div class="theme-modal-content">
+            <div class="theme-modal-header">
+                <h3>个性化设置</h3>
+                <button id="closeThemeModal" class="close-button">&times;</button>
+            </div>
+            <div class="theme-modal-body">
+                <!-- 主题风格选择 -->
+                <div class="theme-section">
+                    <h4>🎨 主题风格</h4>
+                    <p style="color: #6b7280; margin-bottom: 1rem; font-size: 0.9rem;">
+                        选择喜欢的主题风格，立即应用到整个网站
+                    </p>
+                    <div class="theme-grid" id="themeGrid">
+                        <!-- 主题选项将动态加载 -->
+                    </div>
+                </div>
+
+                <!-- 背景设置 -->
+                <div class="theme-section">
+                    <h4>🖼️ 背景设置</h4>
+                    <p style="color: #6b7280; margin-bottom: 1rem; font-size: 0.9rem;">
+                        选择Hero区域背景，或上传自定义背景（仅对当前用户可见）
+                    </p>
+                    <div class="background-grid" id="backgroundGrid">
+                        <!-- 背景选项将动态加载 -->
+                    </div>
+
+                    <!-- 自定义背景上传（仅登录用户可见） -->
+                    <div class="custom-background-section" id="customBackgroundSection">
+                        <h5>自定义背景</h5>
+                        <p>仅登录成员可以上传自定义背景，仅对当前用户可见，不会影响其他用户</p>
+                        <div class="custom-background-form" id="customBackgroundForm">
+                            <input type="file" id="customBgInput" accept="image/*" style="display: none;">
+                            <button class="btn btn-outline" onclick="document.getElementById('customBgInput').click()">
+                                📁 上传背景图片
+                            </button>
+                            <button class="btn btn-outline" id="clearCustomBg">
+                                🗑️ 清除自定义背景
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 操作按钮 -->
+                <div class="theme-actions">
+                    <button class="btn btn-primary" id="saveThemeSettings">💾 保存设置</button>
+                    <button class="btn btn-outline" id="resetThemeSettings">🔄 恢复默认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== 主页 Hero Section ==================== -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>创新引领未来</h1>
-            <p>我们是一支充满激情的团队，致力于创造卓越的产品和服务</p>
-            <a href="#about" class="btn btn-primary">了解更多</a>
+            <h1>智能系统实验室</h1>
+            <p class="subtitle">Intelligent Systems Laboratory</p>
+            <p class="description">专注于人工智能、机器学习、智能系统等前沿技术研究</p>
+            <div class="hero-buttons">
+                <a href="#achievements" class="btn btn-primary">查看成果</a>
+                <a href="#team" class="btn btn-secondary">了解团队</a>
+            </div>
+        </div>
+
+        <!-- 统计数据 -->
+        <div class="hero-stats">
+            <div class="stat-item">
+                <div class="stat-number" data-target="50">0</div>
+                <div class="stat-label">发表论文</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="20">0</div>
+                <div class="stat-label">科研项目</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="15">0</div>
+                <div class="stat-label">获奖荣誉</div>
+            </div>
         </div>
     </section>
 
-    <!-- 关于我们 -->
-    <section id="about" class="section">
+    <!-- ==================== 实验室简介 ==================== -->
+    <section id="introduction" class="section">
         <div class="container">
-            <h2 class="section-title">关于我们</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>我们的故事</h3>
-                    <p>我们的团队成立于2020年，由一群热爱技术创新的专业人士组成。我们相信技术的力量可以改变世界，致力于为客户提供最优质的解决方案。</p>
-                    <p>多年来，我们已经服务了超过100家企业，涵盖金融、教育、医疗等多个领域。我们的目标是成为行业领先的技术服务提供商。</p>
+            <h2 class="section-title">实验室简介</h2>
+            <div class="intro-content">
+                <!-- 实验室简介文本 -->
+                <div class="intro-text" id="introText">
+                    <!-- 动态加载 -->
                 </div>
-                <div class="about-stats">
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="100">0</div>
-                        <div class="stat-label">服务客户</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="50">0</div>
-                        <div class="stat-label">项目完成</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="15">0</div>
-                        <div class="stat-label">团队成员</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="5">0</div>
-                        <div class="stat-label">年经验</div>
+                <!-- 研究方向 -->
+                <div class="research-directions">
+                    <h3>研究方向</h3>
+                    <div class="directions-tags" id="directionsTags">
+                        <!-- 动态加载 -->
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 团队成员 -->
-    <section id="team" class="section bg-light">
+    <!-- ==================== 成果汇总 ==================== -->
+    <section id="achievements" class="section bg-light">
         <div class="container">
-            <h2 class="section-title">核心团队成员</h2>
-            <div class="team-grid">
-                <div class="team-card">
-                    <div class="team-image">
-                        <div class="placeholder-avatar">张</div>
-                    </div>
-                    <div class="team-info">
-                        <h3>张伟</h3>
-                        <p class="team-role">创始人 & CEO</p>
-                        <p class="team-desc">拥有10年互联网行业经验，专注于产品战略和团队管理</p>
-                        <div class="social-links">
-                            <a href="#" class="social-link">LinkedIn</a>
-                            <a href="#" class="social-link">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="team-image">
-                        <div class="placeholder-avatar">李</div>
-                    </div>
-                    <div class="team-info">
-                        <h3>李娜</h3>
-                        <p class="team-role">技术总监</p>
-                        <p class="team-desc">全栈开发专家，擅长架构设计和团队技术指导</p>
-                        <div class="social-links">
-                            <a href="#" class="social-link">LinkedIn</a>
-                            <a href="#" class="social-link">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="team-image">
-                        <div class="placeholder-avatar">王</div>
-                    </div>
-                    <div class="team-info">
-                        <h3>王强</h3>
-                        <p class="team-role">产品经理</p>
-                        <p class="team-desc">用户体验设计专家，专注于产品规划和用户研究</p>
-                        <div class="social-links">
-                            <a href="#" class="social-link">LinkedIn</a>
-                            <a href="#" class="social-link">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="team-image">
-                        <div class="placeholder-avatar">赵</div>
-                    </div>
-                    <div class="team-info">
-                        <h3>赵敏</h3>
-                        <p class="team-role">市场总监</p>
-                        <p class="team-desc">品牌营销专家，擅长市场推广和品牌建设</p>
-                        <div class="social-links">
-                            <a href="#" class="social-link">LinkedIn</a>
-                            <a href="#" class="social-link">GitHub</a>
-                        </div>
-                    </div>
-                </div>
+            <h2 class="section-title">成果汇总</h2>
+
+            <!-- 标签切换 -->
+            <div class="achievement-tabs">
+                <button class="tab-btn active" data-tab="projects">课题项目</button>
+                <button class="tab-btn" data-tab="papers">发表论文</button>
+                <button class="tab-btn" data-tab="competitions">学科竞赛</button>
+                <button class="tab-btn" data-tab="publications">出版刊物</button>
+            </div>
+
+            <!-- 分页控制 -->
+            <div class="pagination-controls">
+                <label for="pageSize" style="color: #6b7280;">每页显示：</label>
+                <select id="pageSize" class="page-size-select">
+                    <option value="5">5项</option>
+                    <option value="10">10项</option>
+                    <option value="20">20项</option>
+                    <option value="50">50项</option>
+                </select>
+            </div>
+
+            <!-- 成果内容 -->
+            <div id="achievementsContent" class="achievements-content">
+                <!-- 动态加载项目、论文、竞赛、刊物 -->
+            </div>
+
+            <!-- 分页按钮 -->
+            <div class="pagination" id="pagination">
+                <!-- 动态加载分页按钮 -->
             </div>
         </div>
     </section>
 
-    <!-- 服务 -->
-    <section id="services" class="section">
+    <!-- ==================== 新闻动态 ==================== -->
+    <section id="news" class="section">
         <div class="container">
-            <h2 class="section-title">我们的服务</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">💻</div>
-                    <h3>网站开发</h3>
-                    <p>专业的网站设计与开发，打造独特的品牌形象和用户体验</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📱</div>
-                    <h3>移动应用</h3>
-                    <p>跨平台移动应用开发，覆盖iOS和Android主流平台</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">☁️</div>
-                    <h3>云服务</h3>
-                    <p>云计算解决方案，助力企业数字化转型和业务升级</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🎨</div>
-                    <h3>UI/UX设计</h3>
-                    <p>以用户为中心的设计理念，创造出色的视觉体验</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📊</div>
-                    <h3>数据分析</h3>
-                    <p>专业的数据分析服务，为决策提供科学依据</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🔒</div>
-                    <h3>网络安全</h3>
-                    <p>全面的安全解决方案，保护您的数据和系统安全</p>
-                </div>
+            <h2 class="section-title">新闻动态</h2>
+            <div id="newsList" class="news-list">
+                <!-- 动态加载新闻 -->
+            </div>
+            <div class="load-more">
+                <button id="loadMoreNews" class="btn btn-outline">加载更多</button>
             </div>
         </div>
     </section>
 
-    <!-- 联系我们 -->
-    <section id="contact" class="section bg-light">
+    <!-- ==================== 博客 ==================== -->
+    <section id="blogs" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">博客</h2>
+            <div id="blogsList" class="blogs-list">
+                <!-- 动态加载博客 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 课题项目 ==================== -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">课题项目</h2>
+            <div id="projectsList" class="projects-list">
+                <!-- 动态加载项目 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 发表论文 ==================== -->
+    <section id="papers" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">发表论文</h2>
+            <div id="papersList" class="papers-list">
+                <!-- 动态加载论文 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 学科竞赛 ==================== -->
+    <section id="competitions" class="section">
+        <div class="container">
+            <h2 class="section-title">学科竞赛</h2>
+            <div id="competitionsList" class="competitions-list">
+                <!-- 动态加载竞赛 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 出版刊物 ==================== -->
+    <section id="publications" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">出版刊物</h2>
+            <div id="publicationsList" class="publications-list">
+                <!-- 动态加载刊物 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 团队成员 ==================== -->
+    <section id="team" class="section">
+        <div class="container">
+            <h2 class="section-title">团队成员</h2>
+
+            <!-- 团队分类标签 -->
+            <div class="team-tabs">
+                <button class="tab-btn active" data-type="all">全部</button>
+                <button class="tab-btn" data-type="teacher">教师</button>
+                <button class="tab-btn" data-type="student">学生</button>
+            </div>
+
+            <!-- 团队成员卡片网格 -->
+            <div id="teamGrid" class="team-grid">
+                <!-- 动态加载成员卡片 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 其他活动 ==================== -->
+    <section id="activities" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">其他活动</h2>
+            <div id="activitiesList" class="activities-list">
+                <!-- 动态加载活动 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 联系我们 ==================== -->
+    <section id="contact" class="section">
         <div class="container">
             <h2 class="section-title">联系我们</h2>
             <div class="contact-content">
+                <!-- 联系信息 -->
                 <div class="contact-info">
                     <h3>联系方式</h3>
-                    <div class="contact-item">
-                        <span class="contact-icon">📍</span>
-                        <span>北京市朝阳区科技园区</span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">📧</span>
-                        <span>contact@ourteam.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">📱</span>
-                        <span>+86 138 8888 8888</span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">🌐</span>
-                        <span>www.ourteam.com</span>
+                    <div id="contactItems">
+                        <!-- 动态加载联系信息 -->
                     </div>
                 </div>
+                <!-- 联系表单 -->
                 <div class="contact-form">
                     <form id="contactForm">
                         <div class="form-group">
@@ -216,38 +365,48 @@
         </div>
     </section>
 
-    <!-- 页脚 -->
+    <!-- ==================== 页脚 ==================== -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
+                <!-- 关于我们 -->
                 <div class="footer-section">
-                    <h4>关于我们</h4>
-                    <p>我们是一支充满激情的团队，致力于创造卓越的产品和服务。</p>
+                    <h4>智能系统实验室</h4>
+                    <p>Intelligent Systems Laboratory</p>
+                    <p>专注于人工智能、机器学习等前沿技术研究</p>
                 </div>
+                <!-- 快速链接 -->
                 <div class="footer-section">
                     <h4>快速链接</h4>
                     <ul>
-                        <li><a href="#home">首页</a></li>
-                        <li><a href="#about">关于我们</a></li>
+                        <li><a href="#home">主页</a></li>
+                        <li><a href="#achievements">成果汇总</a></li>
                         <li><a href="#team">团队成员</a></li>
-                        <li><a href="#services">服务</a></li>
+                        <li><a href="#contact">联系我们</a></li>
                     </ul>
                 </div>
+                <!-- 访问入口 -->
                 <div class="footer-section">
-                    <h4>关注我们</h4>
-                    <div class="social-icons">
-                        <a href="#" class="social-icon">GitHub</a>
-                        <a href="#" class="social-icon">Twitter</a>
-                        <a href="#" class="social-icon">LinkedIn</a>
-                    </div>
+                    <h4>访问入口</h4>
+                    <ul>
+                        <li><a href="pages/login.html">成员登录</a></li>
+                        <li><a href="#news">新闻动态</a></li>
+                        <li><a href="#blogs">博客</a></li>
+                    </ul>
                 </div>
             </div>
+            <!-- 版权信息 -->
             <div class="footer-bottom">
-                <p>&copy; 2024 OurTeam. All rights reserved.</p>
+                <p>&copy; 2024 智能系统实验室. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Toast 提示消息 -->
+    <div id="toast" class="toast"></div>
+
+    <!-- ==================== JavaScript 引入 ==================== -->
+    <!-- 主脚本文件：包含所有交互逻辑 -->
     <script src="script.js"></script>
 </body>
 </html>

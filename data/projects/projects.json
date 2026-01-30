@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "title": "智能推荐系统研究与实现",
+    "description": "基于深度学习的个性化推荐系统，应用于电商和视频平台",
+    "startDate": "2023-01",
+    "endDate": "2024-12",
+    "status": "进行中",
+    "leader": "张教授",
+    "members": [3, 4],
+    "funding": "国家自然科学基金",
+    "budget": "50万元",
+    "keywords": ["推荐系统", "深度学习", "个性化"],
+    "achievements": "已发表SCI论文2篇，申请发明专利3项",
+    "hasLink": true,
+    "linkUrl": "https://github.com/your-repo/recommendation-system",
+    "linkText": "查看项目详情"
+  },
+  {
+    "id": 2,
+    "title": "基于计算机视觉的智能监控系统",
+    "description": "开发基于深度学习的视频分析系统，实现异常检测和目标追踪",
+    "startDate": "2022-06",
+    "endDate": "2024-06",
+    "status": "进行中",
+    "leader": "李教授",
+    "members": [4, 5],
+    "funding": "省部级项目",
+    "budget": "30万元",
+    "keywords": ["计算机视觉", "目标检测", "视频分析"],
+    "achievements": "已开发原型系统，申请专利2项",
+    "hasLink": false
+  },
+  {
+    "id": 3,
+    "title": "自然语言处理在医疗领域的应用研究",
+    "description": "研究NLP技术在医疗文本分析、诊断辅助等方面的应用",
+    "startDate": "2023-03",
+    "endDate": "2025-03",
+    "status": "进行中",
+    "leader": "张教授",
+    "members": [3, 6],
+    "funding": "横向课题",
+    "budget": "20万元",
+    "keywords": ["自然语言处理", "医疗AI", "文本分析"],
+    "achievements": "完成系统需求分析，开始模型设计",
+    "hasLink": true,
+    "linkUrl": "https://example.com/medical-nlp",
+    "linkText": "项目演示"
+  }
+]

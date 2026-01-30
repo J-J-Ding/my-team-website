@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "基于Transformer的文本分类方法研究",
+    "content": "本文介绍了我们最新开发的基于Transformer架构的文本分类系统...",
+    "author": "王强",
+    "authorId": 3,
+    "date": "2024-01-15",
+    "tags": ["Transformer", "文本分类", "深度学习"],
+    "category": "项目分享",
+    "systemName": "智能文本分类系统",
+    "systemDescription": "该系统能够对多种类型的文本进行自动分类，准确率达到95%以上",
+    "systemImage": "",
+    "github": "",
+    "demoLink": ""
+  },
+  {
+    "id": 2,
+    "title": "YOLOv8在实时目标检测中的应用实践",
+    "content": "分享一下我们在视频监控项目中使用YOLOv8的经验和改进方法...",
+    "author": "刘洋",
+    "authorId": 4,
+    "date": "2024-01-10",
+    "tags": ["YOLOv8", "目标检测", "计算机视觉"],
+    "category": "技术分享",
+    "systemName": "",
+    "systemDescription": "",
+    "systemImage": "",
+    "github": "",
+    "demoLink": ""
+  }
+]

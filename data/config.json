@@ -1,0 +1,76 @@
+{
+  "site": {
+    "title": "智能系统实验室",
+    "subtitle": "Intelligent Systems Laboratory",
+    "description": "专注于人工智能、机器学习、智能系统等前沿技术研究",
+    "keywords": ["智能系统", "人工智能", "机器学习", "实验室"],
+    "author": "智能系统实验室",
+    "copyright": "© 2024 智能系统实验室. All rights reserved."
+  },
+  "navigation": [
+    {
+      "id": "home",
+      "name": "主页",
+      "link": "#home"
+    },
+    {
+      "id": "achievements",
+      "name": "成果汇总",
+      "link": "#achievements"
+    },
+    {
+      "id": "news",
+      "name": "新闻动态",
+      "link": "#news"
+    },
+    {
+      "id": "blogs",
+      "name": "博客",
+      "link": "#blogs"
+    },
+    {
+      "id": "projects",
+      "name": "课题项目",
+      "link": "#projects"
+    },
+    {
+      "id": "papers",
+      "name": "发表论文",
+      "link": "#papers"
+    },
+    {
+      "id": "competitions",
+      "name": "学科竞赛",
+      "link": "#competitions"
+    },
+    {
+      "id": "publications",
+      "name": "出版刊物",
+      "link": "#publications"
+    },
+    {
+      "id": "team",
+      "name": "团队成员",
+      "link": "#team"
+    },
+    {
+      "id": "activities",
+      "name": "其他活动",
+      "link": "#activities"
+    },
+    {
+      "id": "contact",
+      "name": "联系我们",
+      "link": "#contact"
+    }
+  ],
+  "pagination": {
+    "default": 5,
+    "options": [5, 10, 20, 50]
+  },
+  "theme": {
+    "primaryColor": "#2563eb",
+    "secondaryColor": "#1e40af",
+    "accentColor": "#3b82f6"
+  }
+}
